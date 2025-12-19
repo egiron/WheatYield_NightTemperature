@@ -1,0 +1,47 @@
+Variable names,Explanation,Data range
+Loc_no,Number of the location ,"10001, etc"
+Loc_desc,Description of the location,
+Country,Name of country (official names may have changed),
+Lat,Latitude,
+Long,Longitude,
+Occ,"Occurence (occasionally, the same nursery was planted more than once at a given location in a given year)",
+Trial name,Number of nursery and nursery name,
+Nursery,Name of the nursery (ESWYT),
+Nursery_Yr,"Number of nursery year, e.g., 1,2,3…41","1,2,3,….41"
+HarvestYr,Year of harvest,
+CycleStartYr,Year in which ESWYT cycle started,
+Cycle,# of ESWYT cycle,
+Days_TO_HEAD_QC,Quality controlled days to heading from sowing,
+DAYS_TO_MATURITY_QC,Quality controlled days to maturity from sowing,
+BLUE_YLD_t/ha,Best linear unbiased estimation (BLUE) yield (t/ha),
+sowing_Date,Sowing date (yyyy-mm-dd),
+heading_Date,Heading date (yyyy-mm-dd),
+maturity_Date,Maturity date (yyyy-mm-dd),
+Days_To_Heading_fgaps,Gap filled days to heading,
+Days_To_Maturity_fgaps,Gap filled days to maturity,
+avg_TMax_season_ºC,avereage daily maximum temperature from sowing to harvest (ºC),
+avg_TMin_season_ºC,avereage daily minimum temperature from sowing to harvest (ºC),
+avg_VPD_season_kPa,avereage daily vapor pressure deficit from sowing to harvest (kPa),
+ndays_VPD_gt4kPa_season,Number of days with daily VPD greater than 4 kPa per season,
+ndays_TMax_gt32C_season,Number of days on which daily maximum temperature exceeded 32ºC from sowing to harvest,
+ndays_TMin_gt25C_season,Number of days on which daily maximum temperature exceeded 25ºC from sowing to harvest,
+avg_TMax_SHminus10d,Average TMax,Period: Sowing to (Heading – 10 d) 
+avg_TMin_SHminus10d,Average TMin,Period: Sowing to (Heading – 10 d) 
+avg_VPD_SHminus10d,Average VPD,Period: Sowing to (Heading – 10 d) 
+ndays_VPD_gt4kPa_SHminus10d,Number of days with VPD exceeding 4 kPa,Period: Sowing to (Heading – 10 d) 
+ndays_TMax_gt32C_SHminus10d,Number of days with TMax exceeding 32ºC,Period: Sowing to (Heading – 10 d) 
+ndays_TMin_gt25C_SHminus10d,Number of days with TMin exceeding 25ºC,Period: Sowing to (Heading – 10 d) 
+avg_TMax_Hminus10d-Hplus10d,Average TMax,Period: (Heading – 10 d) to (Heading + 10 d)
+avg_TMin_Hminus10d-Hplus10d,Average TMin,Period: (Heading – 10 d) to (Heading + 10 d)
+avg_VPD_Hminus10d-Hplus10d,Average VPD,Period: (Heading – 10 d) to (Heading + 10 d)
+ndays_VPD_gt4kPa_Hminus10d-Hplus10d,Number of days with VPD exceeding 4 kPa,Period: (Heading – 10 d) to (Heading + 10 d)
+ndays_TMax_gt32C_Hminus10d-Hplus10d,Number of days with TMax exceeding 32ºC,Period: (Heading – 10 d) to (Heading + 10 d)
+ndays_TMin_gt25C_Hminus10d-Hplus10d,Number of days with TMin exceeding 25ºC,Period: (Heading – 10 d) to (Heading + 10 d)
+avg_TMax_GrainFill,Average TMax GrainFill,Period: (Heading+10 d) to maturity  or grainfilling
+avg_TMin_GrainFill,Average TMin GrainFill,Period: (Heading+10 d) to maturity
+avg_VPD_GrainFill,Average VPD GrainFill,Period: (Heading+10 d) to maturity
+ndays_VPD_gt4kPa_GrainFill,Number of days with VPD exceeding 4 kPa,Period: (Heading+10 d) to maturity
+ndays_TMax_gt32C_GrainFill,Number of days with TMax exceeding 32ºC,Period: (Heading+10 d) to maturity
+ndays_TMin_gt25C_GrainFill,Number of days with TMin exceeding 25ºC,Period: (Heading+10 d) to maturity
+Days_HM_Obs,Days from reported heading to reported maturity,
+Days_GFill_Obs,Grainfill duration in days (Assumption: Heading+10days to maturity),

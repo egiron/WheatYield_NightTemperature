@@ -1,0 +1,22 @@
+,,,,,,
+,,,Grain Yield (t/ha),,,
+Predictor,Variable Name,Period,Contribution,Portion,,Rank
+avg_TMin_GrainFill,Avg. Minimum Temperature (°C),Grainfilling,715.670,0.4120,,1
+avg_SolRad_GrainFill,Avg. Solar Radiation (MJ/m2/day),Grainfilling,278.766,0.1605,,2
+avg_TMin_Hminus10d-Hplus10d,Avg. Minimum Temperature (°C),Heading,194.766,0.1121,,3
+avg_SolRad_Hminus10d-Hplus10d,Avg. Solar Radiation (MJ/m2/day),Heading,97.847,0.0563,,4
+avg_TMin_SHminus10d,Avg. Minimum Temperature (°C),Sowing to Heading,95.936,0.0552,,5
+avg_TMax_SHminus10d,Avg. Maximum Temperature (°C),Sowing to Heading,60.174,0.0346,,6
+avg_TMax_GrainFill,Avg. Maximum Temperature (°C),Grainfilling,57.860,0.0333,,7
+avg_SolRad_SHminus10d,Avg. Solar Radiation (MJ/m2/day),Sowing to Heading,48.787,0.0281,,8
+avg_TMax_Hminus10d-Hplus10d,Avg. Maximum Temperature (°C),Heading,48.604,0.0280,,9
+avg_VPD_SHminus10d,Avg. Vapor Pressure Deficit (kPa),Sowing to Heading,43.096,0.0248,,10
+ndays_TMax_Hplus10dM,Number of days Avg. Maximum Temperature > 32°C,Grainfilling,39.738,0.0229,,11
+avg_VPD_GrainFill,Avg. Vapor Pressure Deficit (kPa),Grainfilling,31.111,0.0179,,12
+ndays_TMax_gt32C_Hminus10d-Hplus10d,Number of days Avg. Maximum Temperature > 32°C,Heading,19.749,0.0114,,13
+ndays_TMax_gt32C_SHminus10d,Number of days Avg. Maximum Temperature > 32°C,Sowing to Heading,4.675,0.0027,,14
+ndays_TMin_Hplus10dM,Avg. Minimum Temperature (°C),Grainfilling,0.430,0.0002,,15
+ndays_VPD_gt4kPa_Hminus10d-Hplus10d,Number of days Avg. Vapor Pressure Deficit > 4 kPa,Heading,0.048,0.0000,,16
+ndays_VPD_gt4kPa_SHminus10d,Number of days Avg. Vapor Pressure Deficit > 4 kPa,Sowing to Heading,0.000,0.0000,,17
+ndays_TMin_gt25C_SHminus10d,Number of days Avg. Minimum Temperature > 25°C,Sowing to Heading,0.000,0.0000,,18
+ndays_TMin_gt25C_Hminus10d-Hplus10d,Number of days Avg. Minimum Temperature > 25°C,Heading,0.000,0.0000,,19

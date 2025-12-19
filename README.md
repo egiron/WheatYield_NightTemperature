@@ -1,5 +1,5 @@
 
-<img src="./data/images/Fig_4_YldLossPc_Vert_20251215_v2.jpg" alt="YldLossPc" width="100%" height="auto">
+<img src="./data/images/modelresults.jpg" alt="YldLossPc" width="100%" height="auto">
 
 # Wheat Yield at nighttime temperatures 
 

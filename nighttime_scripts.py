@@ -111,11 +111,11 @@ def loadTablaofImportantVariables():
 # Grain Yield (t/ha)
 # ------------------------
 def dispGrainYieldMap(gpdf, width_mm=180, height_mm=100, column='BLUE_YLD_t_ha', label="Grain Yield (t ha$^{-1}$)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_1a_Map_GrainYield_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'GrainYield_v1.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'GrainYield_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -129,7 +129,7 @@ def dispGrainYieldMap(gpdf, width_mm=180, height_mm=100, column='BLUE_YLD_t_ha',
             dispHisto=True, dispBaseMap=True, dispMainMap=True,
             dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
             vert=False, dispBoxplotSpines=False,
-            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
         )
     else:
         plotMap_Histo_v5(
@@ -152,17 +152,22 @@ def dispGrainYieldMap(gpdf, width_mm=180, height_mm=100, column='BLUE_YLD_t_ha',
 # ------------------------
 def dispSolRadMap(gpdf, width_mm=180, height_mm=100, column='avg_SolRad_GrainFill', 
                       label="Avg. Solar Radiation (MJ m$^{-2}$ day$^{-1}$)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_1b_Map_SolarRadiation_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'SolRad_v1.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'SolRad_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+    if (cmp=='v1'):
+        wbar=0.8
+    else:
+        wbar=1.8
+    
     if (legendVert is False):
         plotMap_Histo_v5(
                 data, gpdf, column, label, #xlim=[-130.5, 178.5], ylim=[-70.5, 65.5],
                 markersize=0.4, basemap=basemap, marker_alphaMap=0.85,
-                subfig_pos=None, sldfile=sldfile, bins=10, wbar=0.8,cmap=None, #'RdBu_r',
+                subfig_pos=None, sldfile=sldfile, bins=10, wbar=wbar,cmap=None, #'RdBu_r',
                 precision=1, fontsizetickslabels=3.5, fontsizetickslabels1=2.5,
                 fontsizebarLabel=3, labelsizeCoords=6, colorbars='skyblue', secondary_xyaxis_tick_pad=2.5, 
                 secondary_xyaxis_location=-0.35, vlw=0.5, width_mm=width_mm, height_mm=height_mm, 
@@ -170,13 +175,13 @@ def dispSolRadMap(gpdf, width_mm=180, height_mm=100, column='avg_SolRad_GrainFil
                 dispHisto=True, dispBaseMap=True, dispMainMap=True,
                 dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
                 vert=False, dispBoxplotSpines=False,
-                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
             )
     else:
         plotMap_Histo_v5(
                 data, gpdf, column, label, #xlim=[-130.5, 178.5], ylim=[-70.5, 65.5],
                 markersize=0.4, basemap=basemap, marker_alphaMap=0.85,
-                subfig_pos=None, sldfile=sldfile, bins=10, wbar=0.8,cmap=None, #'RdBu_r',
+                subfig_pos=None, sldfile=sldfile, bins=10, wbar=wbar,cmap=None, #'RdBu_r',
                 precision=1, fontsizetickslabels=3.5, fontsizetickslabels1=2.5,
                 fontsizebarLabel=3, labelsizeCoords=6, colorbars='skyblue', secondary_xyaxis_tick_pad=2.5, 
                 secondary_xyaxis_location=-0.35, vlw=0.5, width_mm=width_mm, height_mm=height_mm, 
@@ -192,11 +197,11 @@ def dispSolRadMap(gpdf, width_mm=180, height_mm=100, column='avg_SolRad_GrainFil
 # ----------------------------------
 def dispAvgMaxTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMax_GrainFill', 
                       label="Avg. Maximum Temperature (ºC)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_1c_Map_AvgMaxTemperature_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'TMax_v1.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'TMax_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -210,7 +215,7 @@ def dispAvgMaxTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMax
                 dispHisto=True, dispBaseMap=True, dispMainMap=True,
                 dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
                 vert=False, dispBoxplotSpines=False,
-                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
             )
     else:
         plotMap_Histo_v5(
@@ -233,11 +238,11 @@ def dispAvgMaxTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMax
 # ------------------------
 def dispAvgMinTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMin_GrainFill', 
                       label="Avg. Minimum Temperature (ºC)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_1d_Map_AvgMinTemperature_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'TMin_v1.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'TMin_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -251,7 +256,7 @@ def dispAvgMinTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMin
                 dispHisto=True, dispBaseMap=True, dispMainMap=True,
                 dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
                 vert=False, dispBoxplotSpines=False,
-                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+                showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
             )
     else:
         plotMap_Histo_v5(
@@ -274,11 +279,11 @@ def dispAvgMinTemperatureMap(gpdf, width_mm=180, height_mm=100, column='avg_TMin
 # ------------------------
 def dispChangesInTMinMap(gpdf, width_mm=180, height_mm=100, column='TMinChangeGFill', 
                       label="Changes in Avg. Minimum Temperature (ºC)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_3_Map_ChangesInTMin_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'ChangesInTMin_v2.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'ChangesInTMin_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -292,7 +297,7 @@ def dispChangesInTMinMap(gpdf, width_mm=180, height_mm=100, column='TMinChangeGF
             dispHisto=True, dispBaseMap=True, dispMainMap=True,
             dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
             vert=False, dispBoxplotSpines=False,
-            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
         )
     else:
         plotMap_Histo_v5(
@@ -315,11 +320,11 @@ def dispChangesInTMinMap(gpdf, width_mm=180, height_mm=100, column='TMinChangeGF
 # ------------------------
 def dispYldLossMap(gpdf, width_mm=180, height_mm=100, column='YldLossPc', 
                       label="Yield Loss (%)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_3_Map_YldLossPc_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'YieldLoss_v2.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'YieldLoss_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -333,7 +338,7 @@ def dispYldLossMap(gpdf, width_mm=180, height_mm=100, column='YldLossPc',
             dispHisto=True, dispBaseMap=True, dispMainMap=True,
             dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
             vert=False, dispBoxplotSpines=False,
-            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
         )
     else:
         plotMap_Histo_v5(
@@ -356,11 +361,11 @@ def dispYldLossMap(gpdf, width_mm=180, height_mm=100, column='YldLossPc',
 # ------------------------
 def dispLocAveYldMap(gpdf, width_mm=180, height_mm=100, column='BLUE_YLD_t_ha', 
                       label="Observed yield at 255 locations (t ha$^{-1}$)", 
-                      legendVert=False, showFig=True, saveFig=False, 
+                      legendVert=False, showFig=True, saveFig=False, cmp='v2',
                       fname=f'Fig_3_Map_LocAveYld_distribution', fmt='jpg', figures_path='./'
                      ):
     data = gpdf[column].reset_index(drop=True)
-    sldfile = os.path.join(working_dir, 'data', 'legends', 'LocAveYld_v2.sld')
+    sldfile = os.path.join(working_dir, 'data', 'legends', f'LocAveYld_{cmp}.sld')
     basemap = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     if (legendVert is False):
         plotMap_Histo_v5(
@@ -374,7 +379,7 @@ def dispLocAveYldMap(gpdf, width_mm=180, height_mm=100, column='BLUE_YLD_t_ha',
             dispHisto=True, dispBaseMap=True, dispMainMap=True,
             dispXYlabel=True, dispGridlines=False, dispStatslines=True, dispTopBarsCounts=True,
             vert=False, dispBoxplotSpines=False,
-            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Vert', fmt=fmt, figures_path=figures_path
+            showFig=showFig, saveFig=saveFig, fname=f'{fname}_Hztal', fmt=fmt, figures_path=figures_path
         )
     else:
         plotMap_Histo_v5(
@@ -1092,10 +1097,10 @@ def plotMap_Histo_v5(
             #x=0.05, y=0.15, w=0.35, h=0.13, sp=0.025, bxw=0.025
             if (dispXYlabel is True):
                 if (subfig_pos is None):
-                    subfig_pos = [0.14, 0.17, 0.05, 0.38]
+                    subfig_pos = [0.12, 0.17, 0.05, 0.38]
             else:
                 if (subfig_pos is None):
-                    subfig_pos = [0.13, 0.18, 0.05, 0.38]
+                    subfig_pos = [0.11, 0.18, 0.05, 0.38]
                     #subfig_pos = [0.05, 0.15, 0.35, 0.13]
             fig3, hx, bx = plotHistogram_v5(
                 data, fig, ax=None, subfig_pos=subfig_pos, sldfile=sldfile, xylabel=label, bins=bins, 
